@@ -24,4 +24,4 @@ ENV SERVER_URL=jdbc:mysql://uiszmt9bxsrwllbf:2RrFQwLmj2LbBaCdTKB5@bbcdlfupd8e6ro
 
 MAINTAINER TomasMaggi
 COPY target/portfolio-1.0.0-SNAPSHOT.jar portfolio-1.0.0-SNAPSHOT.jar/
-ENTRYPOINT ["java","-jar","/portfolio 0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/portfolio-1.0.0-SNAPSHOT.jar"]
