@@ -8,8 +8,11 @@ import java.util.List;
 @Service
 public class ContactService implements IContactService{
 
-    @Autowired
-    ContactRepository repo;
+    private final ContactRepository repo;
+
+    public ContactService(ContactRepository repo) {
+        this.repo = repo;
+    }
 
     @Override
     public List<ContactEntity> getAll() {
