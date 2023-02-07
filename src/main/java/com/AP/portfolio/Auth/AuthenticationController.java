@@ -15,7 +15,7 @@ public class AuthenticationController {
   private final AuthenticationService service;
 
 //  this will be unavaliable for now
-//  
+//
 //  @PostMapping("/register")
 //  public ResponseEntity<AuthenticationResponse> register(
 //      @RequestBody RegisterRequest request
