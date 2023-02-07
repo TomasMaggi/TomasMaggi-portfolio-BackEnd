@@ -3,6 +3,7 @@ package com.AP.portfolio.Configs;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -24,7 +25,11 @@ public class SecurityConfiguration {
         .csrf()
         .disable()
         .authorizeHttpRequests()
+            // auth request, no need of autorization
         .requestMatchers("/api/v1/auth/**")
+        .permitAll()
+            // consuming the info of the api without changes, no need of autorization
+        .requestMatchers(HttpMethod.GET,"/api/v1/**")
         .permitAll()
         .anyRequest()
         .authenticated()
