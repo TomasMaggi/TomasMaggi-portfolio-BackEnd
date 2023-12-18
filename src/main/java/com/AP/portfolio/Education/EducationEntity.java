@@ -1,9 +1,7 @@
 package com.AP.portfolio.Education;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.AP.portfolio.User.User;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -25,4 +23,8 @@ public class EducationEntity {
     // optionals
     private Date date_of_start;
     private Date date_of_finish;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "USER_ID_EDUCATION"))
+    private User user;
 }

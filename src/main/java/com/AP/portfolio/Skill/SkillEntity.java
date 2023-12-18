@@ -1,9 +1,7 @@
 package com.AP.portfolio.Skill;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.AP.portfolio.User.User;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -20,4 +18,8 @@ public class SkillEntity {
     private String technology;
     private short percentage;
     private String icon_url;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "USER_ID_SKILL"))
+    private User user;
 }

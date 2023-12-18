@@ -1,9 +1,7 @@
 package com.AP.portfolio.Experience;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.AP.portfolio.User.User;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -23,4 +21,7 @@ public class ExperienceEntity {
     private Date start_date;
     private Date finish_date;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "USER_ID_EXPERIENCE"))
+    private User user;
 }
